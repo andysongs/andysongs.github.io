@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="favicon.png" type="image/png">
+  <title>SCHEDAR x SECTOR</title>
+  <style>
+    @font-face {
+      font-family: "Qanelas Soft";
+      src: url("./fonts/QanelasSoftDEMO-UltraLight.otf") format("opentype");
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      height: 100vh;
+      background: rgb(255, 255, 255);
+    }
+
+    section {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+    }
+
+    h2 {
+      color: tomato;
+      font-size: 64px;
+      font-family: "Qanelas Soft";
+    }
+  </style>
+</head>
+
+<body>
+  <section>
+    <article>
+      <h2>Andy Song</h2>
+      <h2>Andy Song</h2>
+      <h2>Andy Song</h2>
+      <h2>Andy Song</h2>
+    </article>
+  </section>
+  <script>
+    const base = 4;
+    const step = 4;
+
+    const titles = [...document.querySelectorAll("h2")];
+    const len = titles.length;
+
+    titles.forEach((el, i) => {
+      const offset = len - i - 1;
+      el.style.filter = `blur(${base + step * offset}px)`;
+    });
+
+  </script>
+</body>
+
+</html>
