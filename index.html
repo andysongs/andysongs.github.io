@@ -30,8 +30,8 @@
     }
 
     h2 {
+      margin: 24px 0;
       color: tomato;
-      font-size: 64px;
       font-family: "Qanelas Soft";
     }
   </style>
@@ -47,7 +47,6 @@
     </article>
   </section>
   <script>
-    const base = 4;
     const step = 4;
 
     const titles = [...document.querySelectorAll("h2")];
@@ -55,7 +54,10 @@
 
     titles.forEach((el, i) => {
       const offset = len - i - 1;
-      el.style.filter = `blur(${base + step * offset}px)`;
+      const blur = step * (offset + 1)
+      const fontSize = blur * (6 + i)
+      el.style.filter = `blur(${blur}px)`;
+      el.style.fontSize = `${fontSize}px`;
     });
 
   </script>
